@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Expenses Tracker",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "watch": "nodemon src/server.js"
+  },
+  "keywords": [
+    "MERN"
+  ],
+  "author": "Modou Tamba",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cor": "^0.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.5.4",
+    "mongoose-paginate-v2": "^1.7.4",
+    "nodemon": "^3.0.1"
+  }
+}
