@@ -22,7 +22,7 @@ const PublicNavbar = () => {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <Link to="/" class="nav-link active" aria-current="page">
+                <Link to="/" class="btn  btn-outline-primary me-2" aria-current="page">
                   Home
                 </Link>
               </li>
@@ -30,7 +30,7 @@ const PublicNavbar = () => {
               <li class="nav-item mb-2">
                 <Link
                   to="/add-expense"
-                  className="btn  btn-outline-warning me-2"
+                  className="btn  btn-outline-danger me-2"
                 >
                   New Expense
                 </Link>
