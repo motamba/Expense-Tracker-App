@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import baseUrl from "../../../utils/baseUrl";
+import BASEURL from "../../../utils/baseUrl";
 
 //Fetch All Exp
 export const fetchAccountStatsAction = createAsyncThunk(
@@ -16,7 +16,7 @@ export const fetchAccountStatsAction = createAsyncThunk(
     };
     //http call
     try {
-      const { data } = await axios.get(`${baseUrl}/api/stats`, config);
+      const { data } = await axios.get(`${BASEURL}/api/stats`, config);
       return data;
     } catch (error) {
       if (!error.response) {

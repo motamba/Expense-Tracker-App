@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, createAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import baseUrl from "../../../utils/baseUrl";
+import BASEURL from "../../../utils/baseUrl";
 
 //Redirect action
 const resetUserRegister = createAction("user/register/reset");
@@ -19,7 +19,7 @@ export const registerUserAction = createAsyncThunk(
     //http call
     try {
       const { data } = await axios.post(
-        `${baseUrl}/api/users/register`,
+        `${BASEURL}/api/users/register`,
         user,
         config
       );
@@ -47,7 +47,7 @@ export const loginUserAction = createAsyncThunk(
     try {
       //make http call
       const { data } = await axios.post(
-        `${baseUrl}/api/users/login`,
+        `${BASEURL}/api/users/login`,
         userData,
         config
       );
@@ -94,7 +94,7 @@ export const userProfileAction = createAsyncThunk(
     };
     //http call
     try {
-      const { data } = await axios.get(`${baseUrl}/api/users/profile/`, config);
+      const { data } = await axios.get(`${BASEURL}/api/users/profile/`, config);
       return data;
     } catch (error) {
       if (!error?.response) {
@@ -120,7 +120,7 @@ export const updateUserAction = createAsyncThunk(
     //http call
     try {
       const { data } = await axios.put(
-        `${baseUrl}/api/users/${userData?.id}`,
+        `${BASEURL}/api/users/${userData?.id}`,
         {
           lastname: userData?.lastname,
           firstname: userData?.firstname,

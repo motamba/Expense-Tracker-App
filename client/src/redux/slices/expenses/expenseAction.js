@@ -1,6 +1,6 @@
 import { createAsyncThunk, createAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import baseUrl from "../../../utils/baseUrl";
+import BASEURL from "../../../utils/baseUrl";
 
 //Redirect action
 export const resetExpCreated = createAction("expense/created/reset");
@@ -22,7 +22,7 @@ export const addNewExpAction = createAsyncThunk(
     //http call
     try {
       const { data } = await axios.post(
-        `${baseUrl}/api/expenses`,
+        `${BASEURL}/api/expenses`,
         {
           title: expense?.title,
           description: expense?.description,
@@ -57,7 +57,7 @@ export const fetchExpensesAction = createAsyncThunk(
     //http call
     try {
       const { data } = await axios.get(
-        `${baseUrl}/api/expenses?page=${page}`,
+        `${BASEURL}/api/expenses?page=${page}`,
         config
       );
       return data;
@@ -85,7 +85,7 @@ export const fetchExpenseAction = createAsyncThunk(
     //http call
     try {
       const { data } = await axios.get(
-        `${baseUrl}/api/expenses/${id}`,
+        `${BASEURL}/api/expenses/${id}`,
 
         config
       );
@@ -114,7 +114,7 @@ export const deleteExpenseAction = createAsyncThunk(
     //http call
     try {
       const { data } = await axios.delete(
-        `${baseUrl}/api/expenses/${id}`,
+        `${BASEURL}/api/expenses/${id}`,
         config
       );
       //dispatch
@@ -145,7 +145,7 @@ export const updateExpenseAction = createAsyncThunk(
     //http call
     try {
       const { data } = await axios.put(
-        `${baseUrl}/api/expenses/${expense?.id}`,
+        `${BASEURL}/api/expenses/${expense?.id}`,
         {
           title: expense?.title,
           description: expense?.description,

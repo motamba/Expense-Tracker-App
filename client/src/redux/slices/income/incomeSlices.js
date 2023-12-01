@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, createAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import baseUrl from "../../../utils/baseUrl";
+import BASEURL from "../../../utils/baseUrl";
 
 //Redirect action
 const resetIncCreated = createAction("income/created/reset");
@@ -22,7 +22,7 @@ export const addNewIncomeAction = createAsyncThunk(
     //http call
     try {
       const { data } = await axios.post(
-        `${baseUrl}/api/incomes`,
+        `${BASEURL}/api/incomes`,
         {
           title: income?.title,
           description: income?.description,
@@ -57,7 +57,7 @@ export const fetchIncomesAction = createAsyncThunk(
     //http call
     try {
       const { data } = await axios.get(
-        `${baseUrl}/api/incomes?page=${page}`,
+        `${BASEURL}/api/incomes?page=${page}`,
         config
       );
       return data;
@@ -84,7 +84,7 @@ export const fetchIncomeAction = createAsyncThunk(
     };
     //http call
     try {
-      const { data } = await axios.get(`${baseUrl}/api/incomes/${id}`, config);
+      const { data } = await axios.get(`${BASEURL}/api/incomes/${id}`, config);
       return data;
     } catch (error) {
       if (!error.response) {
@@ -110,7 +110,7 @@ export const deleteIncomeAction = createAsyncThunk(
     //http call
     try {
       const { data } = await axios.delete(
-        `${baseUrl}/api/incomes/${id}`,
+        `${BASEURL}/api/incomes/${id}`,
         config
       );
       //dispatch
@@ -141,7 +141,7 @@ export const updateIncomeAction = createAsyncThunk(
     //http call
     try {
       const { data } = await axios.put(
-        `${baseUrl}/api/incomes/${income?.id}`,
+        `${BASEURL}/api/incomes/${income?.id}`,
         {
           title: income?.title,
           description: income?.description,
